@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="sidebar">
+            <ul>
+                <li><h2><object id="svgDashboard" type="image/svg+xml" data="static/Dashboard view.svg" width="50" height="50"></object>Dashboard</h2></li>
+                <li><object id="svgHome" class="svg-icon" type="image/svg+xml" data="static/Home icon.svg" width="25" height="25"></object>Home</li>
+                <li><object id="svgProfile" class="svg-icon" type="image/svg+xml" data="static/Face Man Profile.svg" width="25" height="25"></object>Profile</li>
+                <li><object id="svgMessages" class="svg-icon" type="image/svg+xml" data="static/Message badge outline.svg" width="25" height="25"></object>Messages</li>
+                <li><object id="svgHistory" class="svg-icon" type="image/svg+xml" data="static/Material Design History.svg" width="25" height="25"></object>History</li>
+                <li><object id="svgTasks" class="svg-icon" type="image/svg+xml" data="static/Calendar check icon.svg" width="25" height="25"></object>Tasks</li>
+                <li id="filler"></li>
+                <li><object id="svgCommunities" class="svg-icon" type="image/svg+xml" data="static/Account Group Icon.svg" width="25" height="25"></object>Communities</li>
+                <li><object id="svgSettings" class="svg-icon" type="image/svg+xml" data="static/Cog icon.svg" width="25" height="25"></object>Settings</li>
+                <li><object id="svgSupport" class="svg-icon" type="image/svg+xml" data="static/Face Agent.svg" width="25" height="25"></object>Support</li>
+                <li><object id="svgPrivacy" class="svg-icon" type="image/svg+xml" data="static/Account Alert Icon.svg" width="25" height="25"></object>Privacy</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <header id="top">
+                <!-- Search and user icon -->
+                <object id="svgSearch" type="image/svg+xml" data="static/Search web icon.svg" width="25" height="25"></object>
+                <input type="search" placeholder="Search...">
+                <object id="svgBell" type="image/svg+xml" data="static/Bell icon.svg" width="25" height="25"></object>
+                <img src="static/avatar.jpg" width="80" height="80">
+                <h3 id="morgan">Morgan Oakley</h3>
+            </header>
+            <header id="second">
+                <img src="static/avatar.jpg" id="ham">
+                <div id="greet">
+                    <p>Hi there,</p>
+                    <h2>Morgan Oakley (@morgan)</h2>
+                </div>
+                <button id="new">New</button>
+                <button id="upload">Upload</button>
+                <button id="share">Share</button>
+            </header>
+            <div class="projects">
+                <!-- <div class="project">Super Cool Project</div>
+                <div class="project">Less Cool Project</div>
+                <div class="project">Impossible App</div>
+                <div class="project">Easy Peasy App</div>
+                <div class="project">Ad Blocker</div>
+                <div class="project">Money Maker</div> -->
+            </div>
+            <!-- <div class="announcements">
+                <div class="announcement">Site Maintenance</div>
+                <div class="announcement">Community Share Day</div>
+                <div class="announcement">Updated Privacy Policy</div>
+            </div> -->
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

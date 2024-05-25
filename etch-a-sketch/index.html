@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <title>Sketch</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="container"></div>
+        <script>
+            const container = document.getElementById('container')
+            btn = document.createElement('button')
+            btn.setAttribute('id','button')
+            btn.textContent = 'Change size of the canvas.'
+            document.body.insertBefore(btn,container)
+            btn.addEventListener('click',()=>{
+                let size = parseInt(prompt("Enter new grid size:"))
+                createGrids(size)
+            })
+            
+            let eraser = false;
+            era = document.createElement('button')
+            era.setAttribute('id','button')
+            era.textContent = 'Eraser'
+            document.body.insertBefore(era,container)
+            era.addEventListener('click',()=>{
+                eraser = !eraser
+            })
+            
+            createGrids(50)
+
+            function createGrids(pixels){
+                container.innerHTML = ''
+                for(let i = 0;i < pixels;i++){
+                    const row = document.createElement('div')
+                    row.classList.add('row');
+                    for(let j = 0;j < pixels;j++){
+                        const item = document.createElement('div')
+                        item.classList.add('item');
+                        const r = Math.floor(Math.random() * 255)
+                        const g = Math.floor(Math.random() * 255)
+                        const b = Math.floor(Math.random() * 255)
+                        item.count = 0
+                        item.addEventListener('mouseenter',()=>{
+                            if (!eraser) {
+                                if (item.count == 0){
+                                    item.setAttribute('style',`background-color:rgb(${r},${g},${b}); opacity:0.5;`)
+                                } else {
+                                    opa = parseFloat(item.style.opacity)
+                                    opa += 0.1
+                                    item.style.opacity = opa.toString()
+                                }
+                                item.count++
+                            } else {
+                                item.count = 0
+                                item.style.backgroundColor = 'white'
+                            }
+                        })
+                        row.appendChild(item)
+                    }
+                    container.appendChild(row)
+                }
+            }
+        </script>
+    </body>
+</html>

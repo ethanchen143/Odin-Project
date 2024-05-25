@@ -1,0 +1,18 @@
+#container{
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+}
+
+.item {
+    width: 10px;
+    height: 10px;
+    border: 0.1px solid rgb(193, 193, 193);
+}
+
+#button {
+    
+}

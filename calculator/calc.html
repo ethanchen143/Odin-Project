@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="calc">
+    </div>
+    div+p+strong.class1
+    <script>
+        let evaluate = false
+        let alreadydot = false
+
+        const calc = document.querySelector('#calc')
+        const second = document.createElement('p')
+        second.setAttribute('id','second')
+        calc.appendChild(second)
+
+        const dis = document.createElement('p')
+        dis.setAttribute('id','dis')
+        calc.appendChild(dis)
+
+        const clear = document.createElement('button')
+        clear.setAttribute('id','clear')
+        clear.textContent = 'AC'
+        clear.addEventListener('click',()=>{dis.textContent = ''; second.textContent = ''; evaluate = false;})
+        calc.appendChild(clear)
+
+        function eval(){
+            let a = ''
+            let b = ''
+            let op = ''
+            for (let i = 0; i < dis.textContent.length; i++){
+                if (dis.textContent[i] === '+' || dis.textContent[i] === '-' || dis.textContent[i] === '*' || dis.textContent[i] === '/'){
+                    if (!(dis.textContent[i] === '-' && i === 0)){
+                        op = dis.textContent[i]
+                        continue
+                    }
+                }
+                if (op === ''){
+                    a += dis.textContent[i]
+                } else {
+                    b += dis.textContent[i]
+                }
+            }
+            switch (op) {
+                case '+':
+                    second.textContent = dis.textContent;
+                    dis.textContent = Number(a) + Number(b);
+                    break;
+                case '-':
+                    second.textContent = dis.textContent;
+                    dis.textContent = Number(a) - Number(b);
+                    break;
+                case '*':
+                    second.textContent = dis.textContent;
+                    dis.textContent = Number(a) * Number(b);
+                    break;
+                case '/':
+                    second.textContent = dis.textContent;
+                    if (Number(b) !== 0) {
+                        dis.textContent = Number(a) / Number(b);
+                    } else {
+                        dis.textContent = 'Cannot divide by zero';
+                    }
+                    break;
+            }
+            dis.textContent = Math.round(parseFloat(dis.textContent) * 1000) / 1000;
+            evaluate = false
+            alreadydot = false
+        }
+
+        const enter = document.createElement('button')
+        enter.setAttribute('id','enter')
+        enter.textContent = '='
+        enter.addEventListener('click',eval)
+        calc.appendChild(enter)
+
+        for (let i = 0; i < 10; i++){
+            const tmp = document.createElement('button')
+            tmp.classList.add('num')
+            tmp.textContent = `${i}`
+            tmp.addEventListener('click',()=>{dis.textContent += `${i}`})
+            calc.appendChild(tmp)
+        }
+
+        const dot = document.createElement('button')
+        dot.setAttribute('id','dot')
+        dot.textContent = '.'
+        dot.addEventListener('click',()=>{
+            if (alreadydot) {
+                return;
+            }
+            dis.textContent += '.'
+            alreadydot = true
+        })
+        calc.appendChild(dot)
+
+        function addOperation(symbol) {
+            const operation = document.createElement('button');
+            operation.classList.add('operation');
+            operation.textContent = symbol;
+            operation.addEventListener('click', () => {
+                if (evaluate) {
+                    document.querySelector('#enter').click();
+                }
+                evaluate = true;
+                alreadydot = false
+                second.textContent = '';
+                dis.textContent += ` ${symbol} `;
+            });
+            calc.appendChild(operation);
+        }
+    
+        addOperation('+');
+        addOperation('-');
+        addOperation('*');
+        addOperation('/');
+
+        document.addEventListener('keydown', (event) => {
+            const key = event.key;  // Get the key pressed
+            switch (key) {
+                case '0':
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                    dis.textContent += key; 
+                    break;
+                case '+':
+                case '-':
+                case '*':
+                case '/':
+                    if (evaluate) {
+                        document.querySelector('#enter').click();
+                    }
+                    dis.textContent += `${key}`;
+                    evaluate = true;
+                    alreadydot = false;
+                    break;
+                case '=':
+                case 'Enter': 
+                    document.querySelector('#enter').click();
+                    break;
+                case '.':
+                    if (!alreadydot) {
+                        dis.textContent += key;
+                        alreadydot = true; 
+                    }
+                    break;
+                case 'Escape': 
+                    document.querySelector('#clear').click();
+                    break;
+                default:
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>

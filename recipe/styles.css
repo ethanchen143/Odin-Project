@@ -1,0 +1,50 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 25px;
+}
+
+ol li {
+    font-size: 25px;
+}
+
+ul li {
+    font-size: 25px;
+}
+
+li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.recipe_name{
+    font-size: 30px;
+    background-color: aqua;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+h3 {
+    background: yellow;
+    font-size: 35px;
+    text-align: center;
+}
+
+img {
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    font-size: 25px;
+    background: aqua;
+    color: grey;
+    border-style: groove;
+}

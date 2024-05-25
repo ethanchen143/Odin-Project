@@ -1,0 +1,85 @@
+/* General body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+/* Styling for the calculator wrapper */
+#calc {
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+    grid-gap: 10px;
+}
+
+/* Styling for display panels */
+p#second, p#dis {
+    grid-column: 1 / -1; /* Spans all columns */
+    background-color: #e0e0e0;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    min-height: 40px;
+    word-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+p#second {
+    font-size: 0.8em; /* Smaller font for secondary display */
+    color: #606060; /* Lighter text color for less emphasis */
+}
+
+p#dis {
+    font-size: 1.5em; /* Larger font for main display */
+    background-color: #d0d0d0;
+}
+
+/* Button styling */
+button {
+    height: 45px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    background-color: #ccc;
+}
+
+/* Clear, Enter, and Dot buttons span two grid cells */
+#clear, #enter, #dot {
+    grid-column: span 2;
+    color: white;
+    background-color: #ff4444; /* Red for clear and dot for consistency */
+}
+
+#enter {
+    background-color: #44c767; /* Green for enter */
+}
+
+#dot {
+    background-color: #44c767;
+}
+
+/* Styling operation buttons for a distinct look */
+.operation {
+    background-color: #f1c40f;
+    color: white;
+}
+
+.operation:active {
+    background-color: #f39c12;
+}
