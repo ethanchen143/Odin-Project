@@ -1,11 +1,13 @@
 let myLibrary = [ { author: 'J.K. Rowling', title: 'Harry Potter', pages: 500, read: true },
 { author: 'George Orwell', title: '1984', pages: 328, read: false }];
 
-function Book(author, title, pages, read) {
-    this.author = author
-    this.title = title
-    this.pages = pages
-    this.read = read
+class Book {
+    constructor(author,title,pages,read){
+        this.author = author
+        this.title = title
+        this.pages = pages
+        this.read = read
+    }
 }
 
 function display(){

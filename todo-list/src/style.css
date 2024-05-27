@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+}
+
+.top-bar {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    height: 90vh;
+}
+
+.sidebar {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    background: #ddd;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#add-button {
+    position: fixed;
+    top:85vh;
+    left:10vw;
+    width: 50px;
+    height: 50px;
+    background-color: #333;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    border: 0px;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+#add-button:hover {
+    transform: rotate(180deg);
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 50%; 
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="date"] {
+    width: 90%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.modal-content input[type="radio"] {
+    margin: 15px;
+}
+
+.modal-content label {
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.modal-content button {
+    background-color: #333;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.modal-content button:hover {
+    opacity: 0.8;
+}
+
+.close-button{
+    font-size: 30px;
+}
+
+.todo-container {
+    flex: 3;
+    padding: 20px;
+    background-color: #fff;
+    overflow-y: auto;
+}
+
+.todo-item {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 15fr 1fr 4fr 1fr;
+    align-items: center;
+    background: #eee;
+    margin: 10px 0;
+    padding: 10px;
+    border-left: 5px solid #333;
+}
+
+.priority {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around; 
+    margin-right: 3vw;
+}
+
+.bar {
+    width: 10px;
+    height: 10px;
+}
+
+.bar.low {
+    height: 10px;
+    background-color: #46dc5a;
+    opacity: 0.2;
+}
+
+.bar.mid {
+    height: 20px;
+    background-color: #bedc46;
+    opacity: 0.2;
+}
+
+.bar.high {
+    height: 30px;
+    background-color: #dc4646;
+    opacity: 0.2;
+}
+
+.delete-btn {
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    color: red;
+}
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do List App</title>
+</head>
+<body>
+    <div class="top-bar">
+        <h1>To-Do List Manager</h1>
+        <p>by Ethan Chen</p>
+    </div>
+    <div class="container">
+        <div class="sidebar">
+            <ul id="project-list"></ul>
+            <button id="add-button">+</button>
+        </div>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <div style="display: flex; align-items:center; justify-content:space-between;">
+                    <h2>Add New Item</h2>
+                    <span class="close-button">×</span>
+                </div>
+                <form id="addForm">
+                    <div style="display: flex; align-items:center;">
+                        <input type="radio" id="project" name="itemType" value="project" checked>
+                        <label for="project">Project</label><br>
+                        <input type="radio" id="task" name="itemType" value="task">
+                        <label for="task">Task</label><br>
+                    </div>
+                    <input type="text" id="itemName" name="itemName" placeholder="Name" required><br>
+                    <label for="priority">Priority (for tasks only)</label>
+                    <select id="priority" name="priority">
+                        <option value="low">Low</option>
+                        <option value="mid">Mid</option>
+                        <option value="high">High</option>
+                    </select><br>
+                    <input type="date" id="date" name="date" placeholder="Date (for tasks only)"><br>
+                    <button type="submit">Add</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="todo-container">
+            <div id="todo-list"></div>
+        </div>
+    </div>
+</body>
+</html>

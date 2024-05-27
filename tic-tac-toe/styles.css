@@ -1,0 +1,43 @@
+*{
+    text-align: center;
+}
+button{
+    background-color: #3498db;
+    color: white;
+    border: 0px white;
+    padding: 20px;
+    margin: 20px;
+    font-size: 20px;
+    width: 100px;
+    border-radius: 30px;
+}
+
+button.selected {
+    box-shadow: 0 0 10px #3498db;
+}
+
+h1{
+    font-size: 40px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 10px;
+    position: relative;
+    left: calc((100vw - 320px) / 2);
+    align-items: center;
+    justify-items: center;
+}
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #cdf670;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(213, 30, 146);
+    cursor: pointer;
+}
